@@ -1,0 +1,758 @@
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~$ cd Documents
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents$ cd LSS
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ ls
+ASec  BSec  sample1.txt
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ users
+zaibafarheen
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo useradd -d u1
+useradd: invalid home directory 'u1'
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo useradd -d ASec u1
+useradd: invalid home directory 'ASec'
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo useradd -d ul ASec
+useradd: invalid home directory 'ul'
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo useradd u1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo passwd u1
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+Sorry, passwords do not match.
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo useradd u2
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo passwd u1
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo passwd u2
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo groupadd g1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo groupadd g2
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo usermod -a u1 -G g1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo usermod -a u2 -G g2
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo adduser u3 -G g1
+Option g is ambiguous (gecos, gid, group)
+adduser [--home DIR] [--shell SHELL] [--no-create-home] [--uid ID]
+[--firstuid ID] [--lastuid ID] [--gecos GECOS] [--ingroup GROUP | --gid ID]
+[--disabled-password] [--disabled-login] [--add_extra_groups]
+[--encrypt-home] USER
+   Add a normal user
+
+adduser --system [--home DIR] [--shell SHELL] [--no-create-home] [--uid ID]
+[--gecos GECOS] [--group | --ingroup GROUP | --gid ID] [--disabled-password]
+[--disabled-login] [--add_extra_groups] USER
+   Add a system user
+
+adduser --group GROUP
+addgroup [--gid=GID] GROUP
+   Add a user group
+
+addgroup --system [--gid=GID] GROUP
+   Add a system group
+
+adduser USER GROUP
+   Add an existing user to an existing group
+
+general options:
+  --force-badname       allow usernames which do not match the
+                        NAME_REGEX configuration variable
+  --extrausers          uses extra users as the database
+  -q, --quiet           don't give process information to stdout
+  -d, --debug           be more verbose during execution
+  -h, --help            usage message
+  -v, --version         version number and copyright
+  -c FILE, --conf=FILE  use FILE as configuration file
+
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,zaibafarheen
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:zaibafarheen
+floppy:x:25:
+tape:x:26:
+sudo:x:27:zaibafarheen
+audio:x:29:
+dip:x:30:zaibafarheen
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:zaibafarheen
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+crontab:x:103:
+systemd-timesync:x:104:
+input:x:105:
+sgx:x:106:
+kvm:x:107:
+render:x:108:
+messagebus:x:109:
+syslog:x:110:
+systemd-resolve:x:111:
+_ssh:x:112:
+tss:x:113:
+bluetooth:x:114:
+ssl-cert:x:115:
+uuidd:x:116:
+systemd-oom:x:117:
+tcpdump:x:118:
+avahi-autoipd:x:119:
+netdev:x:120:
+avahi:x:121:
+lpadmin:x:122:zaibafarheen
+rtkit:x:123:
+whoopsie:x:124:
+sssd:x:125:
+pipewire:x:126:
+nm-openvpn:x:127:
+fwupd-refresh:x:128:
+geoclue:x:129:
+scanner:x:130:saned
+saned:x:131:
+colord:x:132:
+gdm:x:133:
+lxd:x:134:zaibafarheen
+zaibafarheen:x:1000:
+sambashare:x:135:zaibafarheen
+gamemode:x:999:
+gnome-initial-setup:x:998:
+mca:x:1002:
+seblin:x:1003:
+ivy:x:1004:
+xandra:x:1005:
+ema:x:1001:
+eilin:x:1006:
+friends:x:1007:ema,eilin
+group1:x:1008:user1,user2
+group2:x:1009:user3,user4
+user1:x:1010:
+user2:x:1011:
+user3:x:1012:
+user4:x:1013:
+u1:x:1014:
+u2:x:1015:
+g1:x:1016:u1
+g2:x:1017:u2
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ groups u1
+u1 : u1 g1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ groups u2
+u2 : u2 g2
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ id u1
+uid=1010(u1) gid=1014(u1) groups=1014(u1),1016(g1)
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ id u2
+uid=1011(u2) gid=1015(u2) groups=1015(u2),1017(g2)
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ groups
+zaibafarheen adm cdrom sudo dip plugdev lpadmin lxd sambashare
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ groups u1
+u1 : u1 g1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ groups u2
+u2 : u2 g2
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo adduser u3
+Adding user `u3' ...
+Adding new group `u3' (1018) ...
+Adding new user `u3' (1012) with group `u3' ...
+Creating home directory `/home/u3' ...
+Copying files from `/etc/skel' ...
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+Sorry, passwords do not match.
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for u3
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] 
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ groups u3
+u3 : u3
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo usermod -a u3 -G g1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ groups u3
+u3 : u3 g1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo useradd u3
+useradd: user 'u3' already exists
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo useradd u4
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo passwd u4
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo usermod -a u4 -G g2
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ users g2
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ users g2
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ user g2
+Command 'user' not found, did you mean:
+  command 'users' from deb coreutils (8.32-4.1ubuntu1)
+  command 'iuser' from deb ipmiutil (3.1.8-1)
+  command 'fuser' from deb psmisc (23.5-1)
+  command 'userv' from deb userv (1.2.1~beta4)
+Try: sudo apt install <deb name>
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ users
+zaibafarheen
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo adduser u5
+Adding user `u5' ...
+Adding new group `u5' (1020) ...
+Adding new user `u5' (1014) with group `u5' ...
+Creating home directory `/home/u5' ...
+Copying files from `/etc/skel' ...
+New password: 
+BAD PASSWORD: No password supplied
+Retype new password: 
+No password has been supplied.
+passwd: Authentication token manipulation error
+passwd: password unchanged
+Try again? [y/N] 
+Changing the user information for u5
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+
+Is the information correct? [Y/n] zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo passwd u5
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo usermod -a u5 -G g1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ groups u5
+u5 : u5 g1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo gpasswd -d u5 g1
+Removing user u5 from group g1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo cat /etc/
+cat: /etc/: Is a directory
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo cat /etc/groups
+cat: /etc/groups: No such file or directory
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo cat /etc/groups/
+cat: /etc/groups/: No such file or directory
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,zaibafarheen
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:zaibafarheen
+floppy:x:25:
+tape:x:26:
+sudo:x:27:zaibafarheen
+audio:x:29:
+dip:x:30:zaibafarheen
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:zaibafarheen
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+crontab:x:103:
+systemd-timesync:x:104:
+input:x:105:
+sgx:x:106:
+kvm:x:107:
+render:x:108:
+messagebus:x:109:
+syslog:x:110:
+systemd-resolve:x:111:
+_ssh:x:112:
+tss:x:113:
+bluetooth:x:114:
+ssl-cert:x:115:
+uuidd:x:116:
+systemd-oom:x:117:
+tcpdump:x:118:
+avahi-autoipd:x:119:
+netdev:x:120:
+avahi:x:121:
+lpadmin:x:122:zaibafarheen
+rtkit:x:123:
+whoopsie:x:124:
+sssd:x:125:
+pipewire:x:126:
+nm-openvpn:x:127:
+fwupd-refresh:x:128:
+geoclue:x:129:
+scanner:x:130:saned
+saned:x:131:
+colord:x:132:
+gdm:x:133:
+lxd:x:134:zaibafarheen
+zaibafarheen:x:1000:
+sambashare:x:135:zaibafarheen
+gamemode:x:999:
+gnome-initial-setup:x:998:
+mca:x:1002:
+seblin:x:1003:
+ivy:x:1004:
+xandra:x:1005:
+ema:x:1001:
+eilin:x:1006:
+friends:x:1007:ema,eilin
+group1:x:1008:user1,user2
+group2:x:1009:user3,user4
+user1:x:1010:
+user2:x:1011:
+user3:x:1012:
+user4:x:1013:
+u1:x:1014:
+u2:x:1015:
+g1:x:1016:u1,u3
+g2:x:1017:u2,u4
+u3:x:1018:
+u4:x:1019:
+u5:x:1020:
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo groupdel friends
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,zaibafarheen
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:zaibafarheen
+floppy:x:25:
+tape:x:26:
+sudo:x:27:zaibafarheen
+audio:x:29:
+dip:x:30:zaibafarheen
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:zaibafarheen
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+crontab:x:103:
+systemd-timesync:x:104:
+input:x:105:
+sgx:x:106:
+kvm:x:107:
+render:x:108:
+messagebus:x:109:
+syslog:x:110:
+systemd-resolve:x:111:
+_ssh:x:112:
+tss:x:113:
+bluetooth:x:114:
+ssl-cert:x:115:
+uuidd:x:116:
+systemd-oom:x:117:
+tcpdump:x:118:
+avahi-autoipd:x:119:
+netdev:x:120:
+avahi:x:121:
+lpadmin:x:122:zaibafarheen
+rtkit:x:123:
+whoopsie:x:124:
+sssd:x:125:
+pipewire:x:126:
+nm-openvpn:x:127:
+fwupd-refresh:x:128:
+geoclue:x:129:
+scanner:x:130:saned
+saned:x:131:
+colord:x:132:
+gdm:x:133:
+lxd:x:134:zaibafarheen
+zaibafarheen:x:1000:
+sambashare:x:135:zaibafarheen
+gamemode:x:999:
+gnome-initial-setup:x:998:
+mca:x:1002:
+seblin:x:1003:
+ivy:x:1004:
+xandra:x:1005:
+ema:x:1001:
+eilin:x:1006:
+group1:x:1008:user1,user2
+group2:x:1009:user3,user4
+user1:x:1010:
+user2:x:1011:
+user3:x:1012:
+user4:x:1013:
+u1:x:1014:
+u2:x:1015:
+g1:x:1016:u1,u3
+g2:x:1017:u2,u4
+u3:x:1018:
+u4:x:1019:
+u5:x:1020:
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo usermod -a ivy -G g1
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo passwd ivy
+New password: 
+BAD PASSWORD: The password is shorter than 8 characters
+Retype new password: 
+passwd: password updated successfully
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,zaibafarheen
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:zaibafarheen
+floppy:x:25:
+tape:x:26:
+sudo:x:27:zaibafarheen
+audio:x:29:
+dip:x:30:zaibafarheen
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:zaibafarheen
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+crontab:x:103:
+systemd-timesync:x:104:
+input:x:105:
+sgx:x:106:
+kvm:x:107:
+render:x:108:
+messagebus:x:109:
+syslog:x:110:
+systemd-resolve:x:111:
+_ssh:x:112:
+tss:x:113:
+bluetooth:x:114:
+ssl-cert:x:115:
+uuidd:x:116:
+systemd-oom:x:117:
+tcpdump:x:118:
+avahi-autoipd:x:119:
+netdev:x:120:
+avahi:x:121:
+lpadmin:x:122:zaibafarheen
+rtkit:x:123:
+whoopsie:x:124:
+sssd:x:125:
+pipewire:x:126:
+nm-openvpn:x:127:
+fwupd-refresh:x:128:
+geoclue:x:129:
+scanner:x:130:saned
+saned:x:131:
+colord:x:132:
+gdm:x:133:
+lxd:x:134:zaibafarheen
+zaibafarheen:x:1000:
+sambashare:x:135:zaibafarheen
+gamemode:x:999:
+gnome-initial-setup:x:998:
+mca:x:1002:
+seblin:x:1003:
+ivy:x:1004:
+xandra:x:1005:
+ema:x:1001:
+eilin:x:1006:
+group1:x:1008:user1,user2
+group2:x:1009:user3,user4
+user1:x:1010:
+user2:x:1011:
+user3:x:1012:
+user4:x:1013:
+u1:x:1014:
+u2:x:1015:
+g1:x:1016:u1,u3,ivy
+g2:x:1017:u2,u4
+u3:x:1018:
+u4:x:1019:
+u5:x:1020:
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo usermod -g g2 ivy
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ sudo cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,zaibafarheen
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:zaibafarheen
+floppy:x:25:
+tape:x:26:
+sudo:x:27:zaibafarheen
+audio:x:29:
+dip:x:30:zaibafarheen
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:zaibafarheen
+staff:x:50:
+games:x:60:
+users:x:100:
+nogroup:x:65534:
+systemd-journal:x:101:
+systemd-network:x:102:
+crontab:x:103:
+systemd-timesync:x:104:
+input:x:105:
+sgx:x:106:
+kvm:x:107:
+render:x:108:
+messagebus:x:109:
+syslog:x:110:
+systemd-resolve:x:111:
+_ssh:x:112:
+tss:x:113:
+bluetooth:x:114:
+ssl-cert:x:115:
+uuidd:x:116:
+systemd-oom:x:117:
+tcpdump:x:118:
+avahi-autoipd:x:119:
+netdev:x:120:
+avahi:x:121:
+lpadmin:x:122:zaibafarheen
+rtkit:x:123:
+whoopsie:x:124:
+sssd:x:125:
+pipewire:x:126:
+nm-openvpn:x:127:
+fwupd-refresh:x:128:
+geoclue:x:129:
+scanner:x:130:saned
+saned:x:131:
+colord:x:132:
+gdm:x:133:
+lxd:x:134:zaibafarheen
+zaibafarheen:x:1000:
+sambashare:x:135:zaibafarheen
+gamemode:x:999:
+gnome-initial-setup:x:998:
+mca:x:1002:
+seblin:x:1003:
+ivy:x:1004:
+xandra:x:1005:
+ema:x:1001:
+eilin:x:1006:
+group1:x:1008:user1,user2
+group2:x:1009:user3,user4
+user1:x:1010:
+user2:x:1011:
+user3:x:1012:
+user4:x:1013:
+u1:x:1014:
+u2:x:1015:
+g1:x:1016:u1,u3,ivy
+g2:x:1017:u2,u4
+u3:x:1018:
+u4:x:1019:
+u5:x:1020:
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ su u1
+Password: 
+$ ls
+ASec  BSec  sample1.txt
+$ sample1.txt
+sh: 2: sample1.txt: not found
+$ cat sample1.txt
+$ ls
+ASec  BSec  sample1.txt
+$ ls -ail
+total 16
+5006728 drwxrwxr-x 4 zaibafarheen zaibafarheen 4096 Mar 12 17:15 .
+4980831 drwxr-xr-x 9 zaibafarheen zaibafarheen 4096 Mar  7 17:46 ..
+5006923 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:57 ASec
+5007079 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:48 BSec
+5006436 -rw-rw-r-- 1 zaibafarheen zaibafarheen    0 Mar 12 17:15 .hiddenfile
+5007721 -rw-rw-r-- 1 zaibafarheen zaibafarheen    0 Mar  7 18:01 sample1.txt
+$ cat>>sample1.txt
+sh: 6: cannot create sample1.txt: Permission denied
+$ exit
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ ls -ail
+total 16
+5006728 drwxrwxr-x 4 zaibafarheen zaibafarheen 4096 Mar 12 17:15 .
+4980831 drwxr-xr-x 9 zaibafarheen zaibafarheen 4096 Mar  7 17:46 ..
+5006923 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:57 ASec
+5007079 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:48 BSec
+5006436 -rw-rw-r-- 1 zaibafarheen zaibafarheen    0 Mar 12 17:15 .hiddenfile
+5007721 -rw-rw-r-- 1 zaibafarheen zaibafarheen    0 Mar  7 18:01 sample1.txt
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ chmod -R 777 sample1.txt
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ ls -ail
+total 16
+5006728 drwxrwxr-x 4 zaibafarheen zaibafarheen 4096 Mar 12 17:15 .
+4980831 drwxr-xr-x 9 zaibafarheen zaibafarheen 4096 Mar  7 17:46 ..
+5006923 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:57 ASec
+5007079 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:48 BSec
+5006436 -rw-rw-r-- 1 zaibafarheen zaibafarheen    0 Mar 12 17:15 .hiddenfile
+5007721 -rwxrwxrwx 1 zaibafarheen zaibafarheen    0 Mar  7 18:01 sample1.txt
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ su u1
+Password: 
+$ ls
+ASec  BSec  sample1.txt
+$ la -ail
+sh: 2: la: not found
+$ ls -ail 
+total 16
+5006728 drwxrwxr-x 4 zaibafarheen zaibafarheen 4096 Mar 12 17:15 .
+4980831 drwxr-xr-x 9 zaibafarheen zaibafarheen 4096 Mar  7 17:46 ..
+5006923 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:57 ASec
+5007079 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:48 BSec
+5006436 -rw-rw-r-- 1 zaibafarheen zaibafarheen    0 Mar 12 17:15 .hiddenfile
+5007721 -rwxrwxrwx 1 zaibafarheen zaibafarheen    0 Mar  7 18:01 sample1.txt
+$ cat >> sample1.txt
+apple
+banana
+ivy$   
+$ cat sample1.txt
+apple
+banana
+ivy$ chmod g=---
+chmod: missing operand after ‘g=---’
+Try 'chmod --help' for more information.
+$ chmod g=--- sample1.txt
+chmod: changing permissions of 'sample1.txt': Operation not permitted
+$ exit
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ chmod g=--- sample.txt
+chmod: cannot access 'sample.txt': No such file or directory
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ ls -ail
+total 20
+5006728 drwxrwxr-x 4 zaibafarheen zaibafarheen 4096 Mar 12 17:15 .
+4980831 drwxr-xr-x 9 zaibafarheen zaibafarheen 4096 Mar  7 17:46 ..
+5006923 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:57 ASec
+5007079 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:48 BSec
+5006436 -rw-rw-r-- 1 zaibafarheen zaibafarheen    0 Mar 12 17:15 .hiddenfile
+5007721 -rwxrwxrwx 1 zaibafarheen zaibafarheen   16 Mar 13 01:29 sample1.txt
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ chmod g+4 sample.txt
+chmod: invalid mode: ‘g+4’
+Try 'chmod --help' for more information.
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ chmod g=4 sample.txt
+chmod: invalid mode: ‘g=4’
+Try 'chmod --help' for more information.
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ chmod g=+-- sample.txt
+chmod: cannot access 'sample.txt': No such file or directory
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ chmod -R 747 sample.txt
+chmod: cannot access 'sample.txt': No such file or directory
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ chmod -R 747 sample1.txt
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ ls -ail
+total 20
+5006728 drwxrwxr-x 4 zaibafarheen zaibafarheen 4096 Mar 12 17:15 .
+4980831 drwxr-xr-x 9 zaibafarheen zaibafarheen 4096 Mar  7 17:46 ..
+5006923 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:57 ASec
+5007079 drwxrwxr-x 5 zaibafarheen zaibafarheen 4096 Mar  7 17:48 BSec
+5006436 -rw-rw-r-- 1 zaibafarheen zaibafarheen    0 Mar 12 17:15 .hiddenfile
+5007721 -rwxr--rwx 1 zaibafarheen zaibafarheen   16 Mar 13 01:29 sample1.txt
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ cd Asec
+bash: cd: Asec: No such file or directory
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ ls
+ASec  BSec  sample1.txt
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS$ cd ASec
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS/ASec$ ls
+A1  A2  A3
+zaibafarheen@zaibafarheen-IdeaPad-3-15IML05-D:~/Documents/LSS/ASec$ git init
+
+
